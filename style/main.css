@@ -1,0 +1,17 @@
+body {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 300;
+}
+
+#header {
+	color: white;
+	height: 50px;
+}
+
+#header .md-icon-button {
+	font-size: 24px;
+}
+
+.lnr {
+    font-size: 24px;
+}

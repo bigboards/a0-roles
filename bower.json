@@ -1,0 +1,24 @@
+{
+  "name": "auth0-admin",
+  "version": "1.0.0",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "components"
+  ],
+  "dependencies": {
+    "a0-angular-storage": "~0.0.12",
+    "angular": "~1.4",
+    "angular-jwt": "~0.0.9",
+    "angular-material": "~0.11",
+    "angular-resource": "~1.2.7",
+    "angular-route": "~1.2.7",
+    "angular-webstorage": "~0.11.0",
+    "fontawesome": "~4.3",
+    "html5shiv": "~3.7.0",
+    "jquery": "~2.1.4"
+  },
+  "resolutions": {
+    "angular": "~1.4"
+  }
+}

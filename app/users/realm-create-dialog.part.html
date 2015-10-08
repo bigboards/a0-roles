@@ -1,0 +1,33 @@
+<md-dialog aria-label="Create a new Realm"  ng-cloak>
+    <form>
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <h2>Create a new Realm</h2>
+                <span flex></span>
+                <md-button class="md-icon-button" ng-click="cancel()">
+                    <md-icon md-font-icon="lnr-cross" class="lnr" aria-label="Close dialog"></md-icon>
+                </md-button>
+            </div>
+        </md-toolbar>
+        <md-dialog-content style="max-width:800px;max-height:810px; ">
+            <md-input-container>
+                <label>Name</label>
+                <input ng-model="name">
+            </md-input-container>
+
+            <div>
+                <h3 class="md-headline">Roles</h3>
+                <md-chips ng-model="details.roles"></md-chips>
+            </div>
+        </md-dialog-content>
+        <div class="md-actions" layout="row">
+            <span flex></span>
+            <md-button ng-click="save()" >
+                Save
+            </md-button>
+            <md-button ng-click="cancel()" style="margin-right:20px;" >
+                Cancel
+            </md-button>
+        </div>
+    </form>
+</md-dialog>

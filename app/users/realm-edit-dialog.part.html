@@ -1,0 +1,25 @@
+<md-dialog aria-label="Realm {{realmName}}"  ng-cloak>
+    <form>
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <h2>Realm {{realmName}}</h2>
+                <span flex></span>
+                <md-button class="md-icon-button" ng-click="cancel()">
+                    <md-icon md-font-icon="lnr-cross" class="lnr" aria-label="Close dialog"></md-icon>
+                </md-button>
+            </div>
+        </md-toolbar>
+        <md-dialog-content style="max-width:800px;max-height:810px; ">
+            <md-chips ng-model="realm.roles"></md-chips>
+        </md-dialog-content>
+        <div class="md-actions" layout="row">
+            <span flex></span>
+            <md-button ng-click="save()" >
+                Save
+            </md-button>
+            <md-button ng-click="cancel()" style="margin-right:20px;" >
+                Cancel
+            </md-button>
+        </div>
+    </form>
+</md-dialog>

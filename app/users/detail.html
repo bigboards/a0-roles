@@ -1,0 +1,57 @@
+<md-toolbar>
+    <div class="md-toolbar-tools">
+        <h3>Users / {{user.name}}</h3>
+    </div>
+</md-toolbar>
+<div layout="row" layout-align="center start">
+
+    <div layout-padding layout="row" style="width: 70%;" class="m-t-30">
+        <md-content flex="33" layout="column" layout-align="start center" class="md-whiteframe-z1">
+            <img ng-src="{{user.picture}}" style="width: 200px; height: 200px; margin-top: 20px; border-radius: 10px;">
+            <h1 class="md-headline">{{user.name}}</h1>
+        </md-content>
+        <div flex>
+
+        <md-content class="md-whiteframe-z1">
+            <md-toolbar>
+                <div class="md-toolbar-tools">
+                    <h3>What we know about {{user.given_name}}</h3>
+                </div>
+            </md-toolbar>
+            <div class="m-t-15 m-b-15" layout-padding>
+                <div layout="row" class="property">
+                    <span class="label">nickname:</span>
+                    <span class="value">{{user.nickname}}</span>
+                </div>
+                <div layout="row" class="property">
+                    <span class="label">email:</span>
+                    <span class="value">{{user.email}}</span>
+                </div>
+            </div>
+        </md-content>
+
+        <md-content class="md-whiteframe-z1 m-t-15">
+            <md-toolbar>
+                <div class="md-toolbar-tools">
+                    <h3>Realms to which {{user.given_name}} belongs</h3>
+                    <span flex></span>
+                    <md-button class="md-icon-button" aria-label="Add" ng-click="showRealmCreateDialog($event)">
+                        <md-icon md-font-icon="lnr-plus-circle" class="lnr"></md-icon>
+                    </md-button>
+                </div>
+            </md-toolbar>
+            <md-list>
+                <md-list-item class="md-2-line" ng-repeat="(realm, realmDetails) in user.app_metadata.stores" ng-click="showRealmEditDialog($event, realm, realmDetails)">
+                    <md-icon md-font-icon="lnr-cloud" class="lnr" style="font-size: 42px; margin-left: 15px; margin-right: 15px; width: auto; margin-top: 0;"></md-icon>
+                    <div class="md-list-item-text">
+                        <h3>{{ realm }}</h3>
+                        <p>{{ realmDetails.roles.join(', ') }}</p>
+                    </div>
+                    <md-button class="m-t-20 md-warn" ng-click="removeRealm(realm)">Remove</md-button>
+                    <md-divider></md-divider>
+                </md-list-item>
+            </md-list>
+        </md-content>
+        </div>
+    </div>
+</div>
