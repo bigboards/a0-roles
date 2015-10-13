@@ -36,7 +36,7 @@ angular.module('auth0.users', ['auth0.services'])
         function($scope, $location, $mdDialog, Users, user) {
             user.$promise.then(function(data) {
                 $scope.user = data;
-                $scope.user.app_metadata = $scope.user.app_metadata || {};
+                $scope.user.app_metadata = $scope.user.app_metadata || {stores: {}};
             });
 
             $scope.removeRealm = function(realm) {
